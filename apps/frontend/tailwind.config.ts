@@ -1,4 +1,4 @@
-import {shadows, spacing, colors, sizes, fonts, animations} from "apps/frontend/theme";
+import {shadows, spacing, colors, sizes, fonts, animations} from "./theme";
 import {Config} from "tailwindcss";
 
 export default {

@@ -2,9 +2,9 @@
   "name": "example-with-tailwindcss",
   "type": "module",
   "scripts": {
-    "dev": "../../node_modules/.bin/vinxi dev",
-    "build": "../../node_modules/.bin/vinxi build",
-    "start": "../../node_modules/.bin/vinxi start"
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start"
   },
   "dependencies": {
     "@solidjs/router": "^0.13.3",
