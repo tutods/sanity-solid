@@ -3,6 +3,10 @@ export const getMoviesQuery = `
     title,
     'slug': slug.current,
     overview,
-    releaseDate
+    releaseDate,
+    'poster': {
+      ...poster,
+      'asset': poster.asset->
+    }
   }
 `;
