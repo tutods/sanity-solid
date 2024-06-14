@@ -8,6 +8,15 @@ importers:
 
   apps/frontend:
     dependencies:
+      '@portabletext/react':
+        specifier: ^3.1.0
+        version: 3.1.0(react@18.3.1)
+      '@sanity/client':
+        specifier: ^6.20.0
+        version: 6.20.0
+      '@sanity/image-url':
+        specifier: ^1.0.2
+        version: 1.0.2
       '@solidjs/router':
         specifier: ^0.13.3
         version: 0.13.5(solid-js@1.8.17)
@@ -7636,6 +7645,14 @@ snapshots:
       - react
       - supports-color
 
+  '@sanity/client@6.20.0':
+    dependencies:
+      '@sanity/eventsource': 5.0.2
+      get-it: 8.6.0
+      rxjs: 7.8.1
+    transitivePeerDependencies:
+      - debug
+
   '@sanity/client@6.20.0(debug@3.2.7)':
     dependencies:
       '@sanity/eventsource': 5.0.2
@@ -7811,11 +7828,11 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@sanity/presentation@1.15.13(@sanity/client@6.20.0(debug@4.3.5))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@sanity/presentation@1.15.13(@sanity/client@6.20.0)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@sanity/client': 6.20.0(debug@4.3.5)
       '@sanity/icons': 3.2.0(react@18.3.1)
-      '@sanity/preview-url-secret': 1.6.17(@sanity/client@6.20.0(debug@4.3.5))
+      '@sanity/preview-url-secret': 1.6.17(@sanity/client@6.20.0)
       '@sanity/ui': 2.3.2(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/uuid': 3.0.2
       '@types/lodash.isequal': 4.5.8
@@ -7833,7 +7850,7 @@ snapshots:
       - react-is
       - styled-components
 
-  '@sanity/preview-url-secret@1.6.17(@sanity/client@6.20.0(debug@4.3.5))':
+  '@sanity/preview-url-secret@1.6.17(@sanity/client@6.20.0)':
     dependencies:
       '@sanity/client': 6.20.0(debug@4.3.5)
       '@sanity/uuid': 3.0.2
@@ -9736,6 +9753,16 @@ snapshots:
       has-symbols: 1.0.3
       hasown: 2.0.2
 
+  get-it@8.6.0:
+    dependencies:
+      decompress-response: 7.0.0
+      follow-redirects: 1.15.6
+      is-retry-allowed: 2.2.0
+      progress-stream: 2.0.0
+      tunnel-agent: 0.6.0
+    transitivePeerDependencies:
+      - debug
+
   get-it@8.6.0(debug@3.2.7):
     dependencies:
       decompress-response: 7.0.0
@@ -11534,7 +11561,7 @@ snapshots:
       '@sanity/migrate': 3.45.0
       '@sanity/mutator': 3.45.0
       '@sanity/portable-text-editor': 3.45.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@sanity/presentation': 1.15.13(@sanity/client@6.20.0(debug@4.3.5))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      '@sanity/presentation': 1.15.13(@sanity/client@6.20.0)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/schema': 3.45.0(debug@4.3.5)
       '@sanity/telemetry': 0.7.9(react@18.3.1)
       '@sanity/types': 3.45.0(debug@4.3.5)
