@@ -21,7 +21,6 @@ export function Image({loadingImage, alt, src, srcSet, ...props}: ImageProps) {
     srcSet={isLoading() ? '' : srcSet}
     onLoad={() => {
       setIsLoading(false)
-      console.log('LOADING FINISH!')
     }}
   />
 }
