@@ -8,9 +8,12 @@ importers:
 
   apps/frontend:
     dependencies:
-      '@portabletext/react':
-        specifier: ^3.1.0
-        version: 3.1.0(react@18.3.1)
+      '@fontsource/inter':
+        specifier: ^5.0.18
+        version: 5.0.18
+      '@portabletext/solid':
+        specifier: ^1.0.6
+        version: 1.0.6(solid-js@1.8.17)
       '@sanity/client':
         specifier: ^6.20.0
         version: 6.20.0
@@ -38,6 +41,10 @@ importers:
       vinxi:
         specifier: ^0.3.11
         version: 0.3.11(@opentelemetry/api@1.9.0)(@types/node@20.14.2)(ioredis@5.4.1)(terser@5.31.1)
+    devDependencies:
+      '@portabletext/types':
+        specifier: ^2.0.13
+        version: 2.0.13
 
   apps/studio:
     dependencies:
@@ -1285,6 +1292,9 @@ packages:
   '@floating-ui/utils@0.2.2':
     resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
 
+  '@fontsource/inter@5.0.18':
+    resolution: {integrity: sha512-YCsoYPTcs713sI7tLtxaPrIhXAXvEetGg5Ry02ivA8qUOb3fQHojbK/X9HLD5OOKvFUNR2Ynkwb1kR1hVKQHpw==}
+
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
@@ -1547,6 +1557,11 @@ packages:
     engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
       react: ^17 || ^18 || >=19.0.0-rc
+
+  '@portabletext/solid@1.0.6':
+    resolution: {integrity: sha512-bCk19Zt1fVunTmxO24Brkd1Qtr3DhVjLXh18857Ck9N4WwiOXGkRAa9lzDOx4Fj0SaQsmFJCcQob/xN6wWUdVA==}
+    peerDependencies:
+      solid-js: ^1.6.0
 
   '@portabletext/toolkit@2.0.15':
     resolution: {integrity: sha512-KRNEUAd6eOxE9y591qC0sE24ZG2q27OHXe0dsPclj4IoEzf8aEuDcHR64wfFtB0aHq9Wdx3pIinmhZZcl35/vg==}
@@ -7203,6 +7218,8 @@ snapshots:
 
   '@floating-ui/utils@0.2.2': {}
 
+  '@fontsource/inter@5.0.18': {}
+
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -7467,6 +7484,12 @@ snapshots:
       '@portabletext/toolkit': 2.0.15
       '@portabletext/types': 2.0.13
       react: 18.3.1
+
+  '@portabletext/solid@1.0.6(solid-js@1.8.17)':
+    dependencies:
+      '@portabletext/toolkit': 2.0.15
+      '@portabletext/types': 2.0.13
+      solid-js: 1.8.17
 
   '@portabletext/toolkit@2.0.15':
     dependencies:

@@ -1,12 +1,19 @@
-import {A} from '@solidjs/router'
+import {A, createAsync} from '@solidjs/router'
 import Counter from '~/components/Counter'
 import {getMovie} from '~/cms/services/movies/get-movie'
-import {createResource, For, Match, Show, Suspense, Switch} from 'solid-js'
+import {createResource, For, JSX, Match, Show, Suspense, Switch} from 'solid-js'
 import {urlFor} from '~/utils/url-for'
 import {Image} from '~/components/common/image'
+import {PortableText, PortableTextComponents} from '@portabletext/solid'
+import {components} from '~/cms/blocks'
+
+export const route = {
+  load: () => getMovie()
+}
+
 
 export default function Home() {
-  const [movies] = createResource(getMovie)
+  const movies = createAsync(() => getMovie())
 
   return (
     <main class="text-center mx-auto text-gray-700 p-4">
@@ -25,7 +32,7 @@ export default function Home() {
                 return (
                   <li
                     class={
-                      'shadow-md font-sans flex flex-col gap-1 items-start p-4 rounded-sm'
+                      'shadow-md font-sans flex flex-col gap-1 p-4 rounded-sm text-left'
                     }
                   >
                     <Image
@@ -44,8 +51,12 @@ export default function Home() {
                         ${imageUrl.width(1000).fit('max').url()} 1000w,
                       `}
                     />
-                    <h2 class={'font-sans text-xl'}>{movie.title}</h2>
-                    <p class={'font-sans text-sm'}>{movie.slug}</p>
+                    <h2 class={'font-sans text-left text-xl font-semibold'}>{movie.title}</h2>
+                    <p class={'font-sans text-sm text-left'}>{movie.slug}</p>
+
+                    <div className={'line-clamp-3'}>
+                      <PortableText value={movie.overview} components={components} />
+                    </div>
                   </li>
                 )
               }}

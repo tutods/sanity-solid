@@ -1,5 +1,5 @@
 export const fonts = {
   fontFamily: {
-    sans: 'var(--font-montserrat)',
-  },
-};
+    sans: '"Inter", sans-serif'
+  }
+}
