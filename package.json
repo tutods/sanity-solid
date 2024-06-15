@@ -11,5 +11,6 @@
     "name": "Daniel Sousa @TutoDS",
     "url": "https://github.com/tutods"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "pnpm@9.3.0"
 }
