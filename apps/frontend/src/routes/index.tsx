@@ -1,6 +1,6 @@
 import {A, createAsync} from '@solidjs/router'
 import Counter from '~/components/Counter'
-import {getMovie} from '~/cms/services/movies/get-movie'
+import {getMovies} from '~/cms/services/movies/get-movies'
 import {createResource, For, JSX, Match, Show, Suspense, Switch} from 'solid-js'
 import {urlFor} from '~/utils/url-for'
 import {Image} from '~/components/common/image'
@@ -8,12 +8,12 @@ import {PortableText, PortableTextComponents} from '@portabletext/solid'
 import {components} from '~/cms/blocks'
 
 export const route = {
-  load: () => getMovie()
+  load: () => getMovies()
 }
 
 
 export default function Home() {
-  const movies = createAsync(() => getMovie())
+  const movies = createAsync(() => getMovies())
 
   return (
     <main class="text-center mx-auto text-gray-700 p-4">
@@ -54,7 +54,7 @@ export default function Home() {
                     <h2 class={'font-sans text-left text-xl font-semibold'}>{movie.title}</h2>
                     <p class={'font-sans text-sm text-left'}>{movie.slug}</p>
 
-                    <div className={'line-clamp-3'}>
+                    <div class={'line-clamp-3'}>
                       <PortableText value={movie.overview} components={components} />
                     </div>
                   </li>

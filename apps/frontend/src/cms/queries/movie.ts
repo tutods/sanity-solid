@@ -1,4 +1,4 @@
-export const getMoviesQuery = `
+const getMoviesQuery = `
   *[_type == "movie"] {
     title,
     'slug': slug.current,
@@ -10,3 +10,5 @@ export const getMoviesQuery = `
     }
   }
 `;
+
+export {getMoviesQuery}

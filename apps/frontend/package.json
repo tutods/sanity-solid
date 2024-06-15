@@ -1,6 +1,15 @@
 {
   "name": "solid-start-with-sanity",
   "type": "module",
+  "author": {
+    "name": "Daniel Sousa @TutoDS",
+    "url": "https://github.com/tutods"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.3.0",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
@@ -19,10 +28,6 @@
     "tailwindcss": "^3.4.3",
     "vinxi": "^0.3.11"
   },
-  "engines": {
-    "node": ">=20"
-  },
-  "packageManager": "pnpm@9.3.0",
   "devDependencies": {
     "@portabletext/types": "^2.0.13"
   }

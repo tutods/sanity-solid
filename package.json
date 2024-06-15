@@ -1,0 +1,15 @@
+{
+  "name": "solid-sanity",
+  "version": "1.0.0",
+  "keywords": [
+    "solid",
+    "solid-start",
+    "sanity",
+    "cms"
+  ],
+  "author": {
+    "name": "Daniel Sousa @TutoDS",
+    "url": "https://github.com/tutods"
+  },
+  "license": "MIT"
+}

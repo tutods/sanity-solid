@@ -2,7 +2,7 @@ import {client} from '~/cms'
 import {getMoviesQuery} from '~/cms/queries/movie'
 import {cache} from '@solidjs/router'
 
-const getMovie = cache(async () => {
+const getMovies = cache(async () => {
   try {
     const movies = await client.fetch(getMoviesQuery)
 
@@ -13,4 +13,4 @@ const getMovie = cache(async () => {
   }
 }, 'movies')
 
-export {getMovie}
+export {getMovies}
