@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/impulsionar-solid.iml" filepath="$PROJECT_DIR$/.idea/impulsionar-solid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/solid-sanity.iml" filepath="$PROJECT_DIR$/.idea/solid-sanity.iml" />
     </modules>
   </component>
 </project>

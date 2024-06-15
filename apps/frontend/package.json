@@ -1,5 +1,5 @@
 {
-  "name": "example-with-tailwindcss",
+  "name": "solid-start-with-sanity",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
@@ -19,6 +19,7 @@
     "vinxi": "^0.3.11"
   },
   "engines": {
-    "node": ">=18"
-  }
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.3.0"
 }
