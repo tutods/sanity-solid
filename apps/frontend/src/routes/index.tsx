@@ -39,16 +39,15 @@ export default function Home() {
                       loading="lazy"
                       class="w-full rounded aspect-square object-cover"
                       src={imageUrl
-                        .width(1000)
-                        .dpr(2)
-                        .fit('max')
+                        .maxWidth(400)
+                        .maxHeight(400)
                         .url()}
                       alt={movie.title}
                       loadingImage={imageUrl.size(120, 120).quality(70).blur(50).format('webp').url()}
                       srcset={`
                         ${imageUrl.width(78).url()} 78w,
                         ${imageUrl.width(120).url()} 120w,
-                        ${imageUrl.width(1000).fit('max').url()} 1000w,
+                        ${imageUrl.maxWidth(400).maxHeight(400).url()} 400w,
                       `}
                     />
                     <h2 class={'font-sans text-left text-xl font-semibold'}>{movie.title}</h2>
