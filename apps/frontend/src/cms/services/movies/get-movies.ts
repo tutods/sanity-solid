@@ -3,7 +3,7 @@ import {getMoviesQuery} from '~/cms/queries'
 import {cache} from '@solidjs/router'
 
 const getMovies = cache(async () => {
-  "use server";
+  'use server'
 
   try {
     return client.fetch(getMoviesQuery)

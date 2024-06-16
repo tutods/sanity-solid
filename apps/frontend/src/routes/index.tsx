@@ -5,7 +5,7 @@ import {For, Show, Suspense} from 'solid-js'
 import {urlFor} from '~/utils/url-for'
 import {Image} from '~/components/common/image'
 import {PortableText} from '@portabletext/solid'
-import {components} from '~/cms/blocks'
+import {components} from '~/cms/components/blocks'
 
 export const route = {
   load: () => getMovies()

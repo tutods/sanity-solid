@@ -6,6 +6,7 @@ const client = createClient({
   dataset: env.sanity.dataset,
   useCdn: env.isProduction,
   apiVersion: env.sanity.apiVersion,
-});
+  perspective: 'published',
+})
 
 export {client}
