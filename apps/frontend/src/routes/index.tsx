@@ -19,9 +19,8 @@ export default function Home() {
       <h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">
         Hello world!
       </h1>
-      <Counter />
 
-      <a href={`/movies/walle`}>view movie</a>
+      <Counter />
 
       <Suspense fallback={<div>Loading....</div>}>
         <Show when={movies()}>

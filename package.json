@@ -1,6 +1,7 @@
 {
   "name": "solid-sanity",
   "version": "1.0.0",
+  "type": "module",
   "keywords": [
     "solid",
     "solid-start",
