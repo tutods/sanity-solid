@@ -1,14 +1,12 @@
 import {client} from '~/cms'
-import {getMoviesQuery} from '~/cms/queries/movie'
+import {getMoviesQuery} from '~/cms/queries'
 import {cache} from '@solidjs/router'
 
 const getMovies = cache(async () => {
   "use server";
 
   try {
-    const movies = await client.fetch(getMoviesQuery)
-
-    return movies
+    return client.fetch(getMoviesQuery)
   } catch (error) {
     console.error(error)
     return []

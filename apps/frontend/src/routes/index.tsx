@@ -1,16 +1,15 @@
 import {A, createAsync} from '@solidjs/router'
 import Counter from '~/components/Counter'
 import {getMovies} from '~/cms/services/movies/get-movies'
-import {createResource, For, JSX, Match, Show, Suspense, Switch} from 'solid-js'
+import {For, Show, Suspense} from 'solid-js'
 import {urlFor} from '~/utils/url-for'
 import {Image} from '~/components/common/image'
-import {PortableText, PortableTextComponents} from '@portabletext/solid'
+import {PortableText} from '@portabletext/solid'
 import {components} from '~/cms/blocks'
 
 export const route = {
   load: () => getMovies()
 }
-
 
 export default function Home() {
   const movies = createAsync(() => getMovies())
@@ -21,6 +20,8 @@ export default function Home() {
         Hello world!
       </h1>
       <Counter />
+
+      <a href={`/movies/walle`}>view movie</a>
 
       <Suspense fallback={<div>Loading....</div>}>
         <Show when={movies()}>
@@ -56,6 +57,8 @@ export default function Home() {
                     <div class={'line-clamp-3'}>
                       <PortableText value={movie.overview} components={components} />
                     </div>
+
+                    <a href={`/movies/${movie.slug}`}>View Details</a>
                   </li>
                 )
               }}
