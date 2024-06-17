@@ -1,6 +1,6 @@
 import {A, createAsync} from '@solidjs/router'
 import Counter from '~/components/Counter'
-import {getMovies} from '~/cms/services/movies/get-movies'
+import {getMovies} from '~/cms/services'
 import {For, Show, Suspense} from 'solid-js'
 import {urlFor} from '~/utils/url-for'
 import {Image} from '~/components/common/image'
@@ -15,29 +15,28 @@ export default function Home() {
   const movies = createAsync(() => getMovies())
 
   return (
-    <main class="text-center mx-auto text-gray-700 p-4">
-      <h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">
-        Hello world!
-      </h1>
-
-      <Counter />
+    <main class="mx-auto p-4 flex flex-col gap-4">
+      <section>
+        <h1 class={'text-3xl text-slate-900'}>Movies</h1>
+        <p>List of popular movies.</p>
+      </section>
 
       <Suspense fallback={<div>Loading....</div>}>
         <Show when={movies()}>
-          <ul class={'grid grid-cols-4 gap-6'}>
+          <section class={'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-6'}>
             <For each={movies()}>
               {(movie) => {
                 const imageUrl = urlFor(movie.poster)
 
                 return (
-                  <li
+                  <div
                     class={
-                      'shadow-md font-sans flex flex-col gap-1 p-4 rounded-sm text-left'
+                      'shadow-md font-sans flex flex-col gap-1 rounded-sm text-left'
                     }
                   >
                     <Image
                       loading="lazy"
-                      class="w-full rounded aspect-square object-cover"
+                      class="w-full rounded-t aspect-square object-cover"
                       src={imageUrl
                         .maxWidth(400)
                         .maxHeight(400)
@@ -50,19 +49,22 @@ export default function Home() {
                         ${imageUrl.maxWidth(400).maxHeight(400).url()} 400w,
                       `}
                     />
-                    <h2 class={'font-sans text-left text-xl font-semibold'}>{movie.title}</h2>
-                    <p class={'font-sans text-sm text-left'}>{movie.slug}</p>
+                    <section class={'p-4 flex-1'}>
+                      <h2 class={'font-sans text-left text-xl font-semibold'}>{movie.title}</h2>
+                      <div class={'line-clamp-3 text-sm'}>
+                        <PortableText value={movie.overview} components={components} />
+                      </div>
 
-                    <div class={'line-clamp-3'}>
-                      <PortableText value={movie.overview} components={components} />
-                    </div>
 
-                    <a href={`/movies/${movie.slug}`}>View Details</a>
-                  </li>
+                      <a
+                        class={'mt-4 inline-block py-1 font-semibold px-4 rounded border border-slate-900 text-slate-900 bg-transparent hover:bg-slate-900 hover:text-slate-50 transition-colors ease-in-out duration-150'}
+                        href={`/movies/${movie.slug}`}>View Details</a>
+                    </section>
+                  </div>
                 )
               }}
             </For>
-          </ul>
+          </section>
         </Show>
       </Suspense>
 
