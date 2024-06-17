@@ -1,13 +1,13 @@
 import {client} from '~/cms'
 import {getMoviesQuery} from '~/cms/queries'
 import {cache} from '@solidjs/router'
-import {Movie} from '~/types/movie'
+import {Movie, MoviesList} from '~/types/movie'
 
-const getMovies = cache(async (): Promise<Movie[]> => {
+const getMovies = cache(async (): Promise<MoviesList> => {
   'use server'
 
   try {
-    return client.fetch<Movie[]>(getMoviesQuery)
+    return client.fetch<MoviesList>(getMoviesQuery)
   } catch (error) {
     console.error(error)
     return []

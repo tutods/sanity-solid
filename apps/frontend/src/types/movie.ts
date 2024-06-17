@@ -8,6 +8,12 @@ type Movie = {
   poster: SanityImageAssetDocument
   overview: PortableTextProps['value']
   releaseDate: Date
+  externalId: number
+  popularity: number
+  castMembers: unknown[]
+  crewMembers: unknown[]
 }
 
-export type {Movie}
+type MoviesList = Pick<Movie, 'title' | 'slug' | 'poster' | 'overview' | 'releaseDate'>[]
+
+export type {Movie, MoviesList}
